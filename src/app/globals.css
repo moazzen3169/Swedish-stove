@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-vazirmatn: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Color Palette Tokens */
+  --color-warm-ivory: #F8F7F2;
+  --color-pure-white: #FFFFFF;
+  --color-soft-ivory: #F0EEE5;
+  --color-sand: #E3D8C5;
+  --color-oak: #B69A74;
+  --color-moss: #89927A;
+  --color-forest-green: #35483B;
+  --color-deep-forest: #243329;
+  --color-charcoal: #252724;
+  --color-secondary-text: #686B63;
+  --color-border: #D8D8D0;
+  --color-error: #B33B32;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@theme {
+  --font-sans: var(--font-vazirmatn);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-warm-ivory: #F8F7F2;
+  --color-pure-white: #FFFFFF;
+  --color-soft-ivory: #F0EEE5;
+  --color-sand: #E3D8C5;
+  --color-oak: #B69A74;
+  --color-moss: #89927A;
+  --color-forest-green: #35483B;
+  --color-deep-forest: #243329;
+  --color-charcoal: #252724;
+  --color-secondary-text: #686B63;
+  --color-border-subtle: #D8D8D0;
+  --color-error: #B33B32;
+
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --radius-panel: 20px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-vazirmatn);
+  background-color: var(--color-warm-ivory);
+  color: var(--color-charcoal);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EEE5;
+}
+::-webkit-scrollbar-thumb {
+  background: #B69A74;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #35483B;
+}
+
+/* Scroll margin for fixed header offsetting */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
